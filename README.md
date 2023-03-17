@@ -1,6 +1,57 @@
 # Content Creator Bot
 Building a bot that creates a video script, writes the speech, produces the voice, searches and downloads the video material (if possible, the bot will also be able to edit it) and posts the content on social networks
 
+como automatizar uma edição de videos usando python e o editor shotcut
+
+
+Para automatizar a edição de vídeos usando Python e o editor Shotcut, você pode usar a biblioteca PyAutoGUI para controlar o mouse e o teclado do computador e o Pywinauto para interagir com a interface do Shotcut.
+
+Antes de começar, você precisará instalar as bibliotecas PyAutoGUI e Pywinauto. Você pode instalar essas bibliotecas usando o gerenciador de pacotes pip. Abra o terminal ou o prompt de comando e execute os seguintes comandos:
+
+Copy code
+pip install pyautogui
+pip install pywinauto
+Agora, vamos criar um script Python que inicia o Shotcut, abre um projeto e adiciona um vídeo. Abra o seu editor de código preferido e crie um novo arquivo chamado "automacao.py". Insira o seguinte código:
+
+python
+Copy code
+import pyautogui
+from pywinauto.application import Application
+import time
+
+# Abre o Shotcut
+app = Application(backend='uia').start('C:\\Program Files\\Shotcut\\Shotcut.exe')
+
+# Aguarda a janela abrir
+time.sleep(5)
+
+# Clica no botão "Abrir Projeto"
+pyautogui.click(100, 100)
+
+# Aguarda a janela abrir
+time.sleep(2)
+
+# Digita o caminho do projeto e clica no botão "Abrir"
+pyautogui.write('C:\\Users\\seu_usuario\\Videos\\projeto.mlt')
+pyautogui.press('enter')
+
+# Aguarda a janela abrir
+time.sleep(2)
+
+# Clica no botão "Adicionar Clipe"
+pyautogui.click(200, 200)
+
+# Aguarda a janela abrir
+time.sleep(2)
+
+# Digita o caminho do vídeo e clica no botão "Abrir"
+pyautogui.write('C:\\Users\\seu_usuario\\Videos\\video.mp4')
+pyautogui.press('enter')
+Este código abre o Shotcut, aguarda a janela abrir, clica no botão "Abrir Projeto", digita o caminho do projeto e clica no botão "Abrir", aguarda a janela abrir novamente, clica no botão "Adicionar Clipe", digita o caminho do vídeo e clica no botão "Abrir".
+
+Você pode continuar editando o script Python para adicionar mais funcionalidades, como cortar trechos do vídeo, adicionar efeitos e transições, e exportar o vídeo final. Para isso, você pode usar as funções do PyAutoGUI para controlar o mouse e o teclado, e as funções do Pywinauto para interagir com a interface do Shotcut.
+
+Lembre-se de testar o seu código com cuidado antes de usá-lo em produção, para evitar erros e problemas.
 
 como usar o chatgpt em um programa usando python
 
